@@ -27,14 +27,21 @@ display.display_training_data(training_data)
 
 # %% [markdown]
 # Code where they implement prior probability
+
+
 # %%
 def prior_probability(data):
     # Your code here!
     pass
 
+
 # %% [markdown]
 # Code where they implement feature probability
+
+
 # %%
 def feature_probability(data):
     # Your code here!
     pass
+
+
