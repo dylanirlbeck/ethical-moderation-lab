@@ -6,32 +6,35 @@ from math import exp
 
 print('Content filtering lab, version', __version__)
 
+# %% [markdown]
+# Code block that contains the importing the library. 
+# It will already there, they just have to run it.
 # %%
-def filter_content(posts):
-    """
-    Returns the list of submissions that are okay to post.
-    """
-    return []
+from lab import data_tools, display
+
+# %% [markdown]
+# Code block that parses data into the program
 
 # %%
-def filter_content_human_review(posts):
-    """
-    Returns a tuple:
-        First element: list of submissions that are okay to post.
-        Second element: list of submissions requiring human review.
-    """
-    requires_review = len(posts)
-    return ([], requires_review)
+training_data = data_tools.parse_data('data.txt')
+
+training_data.extend([
+    ('y', 'A passable title'),
+    ('n', 'With the upcoming Thursday night NFL game, remember that this presents a simplified view of an entire culture, caricatures facial features based on race, depicts an outdated/inaccurate style of headdress, paints them as warmongering aggressors and overly glamorizes the violent side of their history.')
+])
+
+display.display_training_data(training_data)
+
+# %% [markdown]
+# Code where they implement prior probability
 # %%
-def calculate_human_review_efficiency(number_of_posts):
-    """
-    Returns the probability (between 0 and 1) that any given post is correctly reviewed, given the number of posts. (Simulates fatigue)
-    """
-    # Simple calculation about effectiveness of posts
-    return exp(-1 * number_of_posts)
+def prior_probability(data):
+    # Your code here!
+    pass
+
+# %% [markdown]
+# Code where they implement feature probability
 # %%
-def success_of_filter(posts, solution):
-    """
-    Returns the percentage (between 0 and 1) of posts correctly classified, given the original posts and the posts that were supposed to get through 
-    filter_content_human_review will be used in this function.
-    """
+def feature_probability(data):
+    # Your code here!
+    pass
