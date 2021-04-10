@@ -9,3 +9,7 @@ Install required packages:
 ```
 pip install -r ./requirements.txt
 ```
+Build the notebook:
+```
+python3 ./build.py
+```
