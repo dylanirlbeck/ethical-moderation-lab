@@ -34,7 +34,7 @@ Code block that displays data
 """
 display.display_labelled_data(training_data)
 # %%
-# Between 10 and 20 of edge case examples to prompt the student
+# TODO: Add more edge case examples for students to explore and discuss, between 10 and 20 in total
 training_data.extend([
     ('y/n', 'A passable title'),
     ('y/n', 'With the upcoming Thursday night NFL game, remember that this presents a simplified view of an entire culture, caricatures facial features based on race, depicts an outdated/inaccurate style of headdress, paints them as warmongering aggressors and overly glamorizes the violent side of their history.')
@@ -42,12 +42,8 @@ training_data.extend([
 
 display.display_labelled_data(training_data)
 
-# %% [markdown]
-"""
-UNOFFICIAL: Code block with a simple class to help with getting data stats
-"""
-
 # %% 
+# We will use a helper class to help the students deal with the actual calculation (so they can focus on ethics and not programming)
 training_data_statistics = data_tools.DataStats(training_data)
 # %% [markdown]
 """
@@ -56,6 +52,11 @@ Code where they implement prior probability
 
 # %%
 def prior_probabilities(label):
+    """
+    Function input: label
+    Global/implicit input: training_data_statistics (DataStats object)
+    Output: P(Label=label)
+    """
     k = 1
     num_invalid = len(training_data_statistics.invalid_posts)
     num_valid = len(training_data_statistics.valid_posts)
@@ -76,6 +77,11 @@ Code where they implement feature probability
 
 # %%
 def word_given_label_probability(word, label):
+    """
+    Function input: label
+    Global/implicit input: training_data_statistics (DataStats object)
+    Output: P(word | Label=label)
+    """
     if label == 'y':
         return training_data_statistics.valid_counter[word] / training_data_statistics.total_invalid_words
     elif label == 'n':
@@ -91,8 +97,7 @@ Returns a tuple: (p_valid, p_invalid)
 
 # %% 
 def submission_probabilities(submission, label):
-    # We calculate log probability
-    # !!! Might be obsolete
+    # TODO: !!! Might be obsolete
     pass
 
 # %% [markdown]
@@ -101,7 +106,11 @@ Code that returns the maximum of the probability of being valid and invalid
 """
 # %%
 def post_validity(submission, threshold = 0):
-    # Your code here!
+    """
+    Input: A particular submission (title of a post)
+    Threshold: a threshold for tuning to mark for manual review
+    """
+    # TODO: Is this log calculation problematic?
     word_arr = data_tools.preprocess_submission(submission)
     sum_log_word_given_valid = 0
     sum_log_word_given_invalid = 0
@@ -113,11 +122,13 @@ def post_validity(submission, threshold = 0):
         if word_given_n > 0:
             sum_log_word_given_invalid += log(word_given_n)
     log_ratio = log(prior_probabilities('y')) - log(prior_probabilities('n')) + sum_log_word_given_valid - sum_log_word_given_invalid
+    # TODO: Maybe assert threshhold is positive for this to work
     if log_ratio < -1 * threshold:
         return 'n'
     elif log_ratio > -1 * threshold:
         return 'y'
     else:
+        # TODO: Maybe this isn't the symbol you want?
         return '?'
 
 
@@ -132,7 +143,6 @@ It should also process the actual dataset
 Code that returns the array of tuples(label, title) based on the probabilities that we found before
 Input: testing dataset
 
-$$ L_aT^eX $$
 """
 
 # %%
@@ -140,6 +150,10 @@ from lab.data_tools import parse_unlabeled_reddit_feed, parse_unlabeled_espn
 testing_data = parse_unlabeled_espn('./data/test/espn.txt', limit=100)
 testing_data.extend(parse_unlabeled_reddit_feed('./data/test/politics.txt', limit=100))
 def filter_posts(posts):
+    """
+    Input: array of posts to filter WITHOUT labels (see output of parse_unlabeled_espn/reddit_feed)
+    Output: array of posts as tuples (label, post title), see output of parse_data
+    """
     # your code here!
     result = []
     for submission in testing_data:
@@ -157,3 +171,14 @@ This should *just work*, e.g. it should already be implemented
 """
 
 # %% 
+# TODO: Calculate percent correctness - could just do by calculating len(verify_algorithm(test_result, solution)) / len(solution)
+def verify_algorithm(test_result, solution):
+    """
+    Input: result of the test labelling, and the solution labelling. They should both be arrays of tuples (see output of parse_data for info)
+    Output: Entries in test_result that did not appear in solution -- also known as wrong entries
+    """
+    return list(set(test_result) - set(solution))
+
+
+# TODO: Establish solution
+verify_algorithm(filtering_result, solution)
