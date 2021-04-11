@@ -6,4 +6,8 @@ def parse_data(filename):
     with open(filename) as fp:
         pass
     return []
+
+
+
+
 print("lab.data_tools imported!")
