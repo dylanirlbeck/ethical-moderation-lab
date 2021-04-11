@@ -19,7 +19,7 @@ from lab import data_tools, display
 # Put in the labels your group thinks is appropriate for the titles
 
 # %%
-training_data = data_tools.parse_data('data.txt')
+training_data = data_tools.parse_data('./data/politics.csv', './data/sports.csv', limit=10)
 
 # %% [markdown]
 # Code block that displays data
@@ -55,13 +55,23 @@ def feature_probability(data):
 
 # %% [markdown]
 # Code where they test the probability of the post being valid and the probability of the post being invalid
+# Returns a tuple: (p_valid, p_invalid)
 
+# %% 
+def post_validity(data):
+    # Your code here!
+    return ()
 
 # %% [markdown]
 # Code that returns the maximum of the probability of being valid and invalid
 
+# %%
+def max_of_probabilities(p_valid, p_invalid):
+    # Your code here!
+    pass
 
-# %% [markdown]
+
+# %% [markdown] 
 # Code that returns the array of tuples(label, title) based on the probabilities that we found before
 # Input: testing dataset
 
