@@ -136,8 +136,9 @@ $$ L_aT^eX $$
 """
 
 # %%
-from lab.data_tools import parse_unlabeled_csv
-testing_data = parse_unlabeled_csv('./data/sports.csv', limit=100)
+from lab.data_tools import parse_unlabeled_reddit_feed, parse_unlabeled_espn
+testing_data = parse_unlabeled_espn('./data/test/espn.txt', limit=100)
+testing_data.extend(parse_unlabeled_reddit_feed('./data/test/politics.txt', limit=100))
 def filter_posts(posts):
     # your code here!
     result = []

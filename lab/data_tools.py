@@ -4,6 +4,21 @@ from collections import Counter
 
 punctuation_translator = str.maketrans('', '', string.punctuation)
 
+def parse_unlabeled_espn(file_fn, limit=300):
+    data = []
+    with open(file_fn) as file_fp:
+        for line in file_fp:
+            data.append(line.strip())
+    return data
+
+def parse_unlabeled_reddit_feed(file_fn, limit=300):
+    # Use in conjunction with fetch-and-label.py
+    data = []
+    with open(file_fn) as file_fp:
+        for line in file_fp:
+            data.append(line.strip().split(': ', 1)[1])
+    return data
+
 def parse_unlabeled_csv(file_fn, limit=300):
     data = []
     with open(file_fn) as file_fp:
