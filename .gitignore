@@ -1,6 +1,6 @@
 .vscode/
 **/__pycache__/
-lab-output.ipynb
+# lab-output.ipynb
 .DS_Store
-data/politics.csv
-data/sports.csv
+# data/politics.csv
+# data/sports.csv

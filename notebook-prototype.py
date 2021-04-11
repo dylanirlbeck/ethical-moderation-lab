@@ -32,6 +32,7 @@ training_data = data_tools.parse_data('./data/politics.csv', './data/espn.txt', 
 """
 Code block that displays data
 """
+# %%
 display.display_labelled_data(training_data)
 # %%
 # TODO: Add more edge case examples for students to explore and discuss, between 10 and 20 in total
