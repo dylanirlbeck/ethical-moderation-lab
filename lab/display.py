@@ -1,6 +1,6 @@
 from beautifultable import BeautifulTable
 
-def display_training_data(arr):
+def display_labelled_data(arr):
     """
     Precondition: each element in `arr` is a tuple:
         (valid, title)
