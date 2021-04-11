@@ -13,3 +13,7 @@ Build the notebook:
 ```
 python3 ./build.py
 ```
+
+## Training Data
+
+<https://www.kaggle.com/socialmedianews/how-news-appears-on-social-media>
