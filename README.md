@@ -27,12 +27,16 @@ Build the notebook:
 python3 ./build.py
 ```
 
-## Training Data
+## Data
+
+We pull data from multiple different resources, which we have listed below:
+
+### Training Data
 
 <https://www.kaggle.com/socialmedianews/how-news-appears-on-social-media>
 
 ESPN: (Taken 4/11/2021) http://www.espn.com/espn/latestnews
 
-## Testing Data
+### Testing Data
 
 ESPN: https://web.archive.org/web/20210213225238/http://www.espn.com/espn/latestnews
