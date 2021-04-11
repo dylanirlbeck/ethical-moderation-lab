@@ -148,8 +148,12 @@ Input: testing dataset
 
 # %%
 from lab.data_tools import parse_unlabeled_reddit_feed, parse_unlabeled_espn
-testing_data = parse_unlabeled_espn('./data/test/espn.txt', limit=100)
-testing_data.extend(parse_unlabeled_reddit_feed('./data/test/politics.txt', limit=100))
+espn_data = parse_unlabeled_espn('./data/test/espn.txt', limit=100)
+politics_data = parse_unlabeled_reddit_feed('./data/test/politics.txt', limit=100)
+
+testing_data = espn_data + politics_data
+solution = [('y', e) for e in espn_data] + [('n', p) for p in politics_data]
+
 def filter_posts(posts):
     """
     Input: array of posts to filter WITHOUT labels (see output of parse_unlabeled_espn/reddit_feed)
@@ -180,6 +184,9 @@ def verify_algorithm(test_result, solution):
     """
     return list(set(test_result) - set(solution))
 
-
-# TODO: Establish solution
-verify_algorithm(filtering_result, solution)
+# %% 
+mislabelled = verify_algorithm(filtering_result, solution)
+# TODO: Alter number of test cases (there are a lot of mistakes so far, I think)
+score = (1 - (len(mislabelled) / len(solution)))
+print('Your accuracy is:', 100*score,'%')
+display.display_labelled_data(mislabelled)
