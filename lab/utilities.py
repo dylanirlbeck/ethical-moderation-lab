@@ -67,5 +67,5 @@ def validate_labels(data):
     Throws error if data is invalid.
     """
     for elem in data:
-        if elem[0] != 'y' or elem[0] != 'n':
+        if elem[0] != 'y' and elem[0] != 'n':
             raise Exception("The data labels must be either 'y' or 'n'!")
