@@ -4,7 +4,6 @@ Ethical Moderation is a programming project that forces students to grapple with
 
 This repository contains the coding portion of the project. Students will use Python and Jupyter Notebook to construct a working content moderation algorithm and contemplate its efficacy.
 
-
 ## Setup
 
 First, clone the repo:
@@ -33,4 +32,4 @@ This project relies on Jupyter Notebook for running the code. Make sure you have
 jupyter notebook
 ```
 
-and open the `lab.ipynb` file. The rest of the lab is completed inside the notebook.
+and open the `code.ipynb` file. The rest of the lab is completed inside the notebook.
