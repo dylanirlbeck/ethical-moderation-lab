@@ -1,3 +1,7 @@
+# TODO pull out various methods into class SportItData
+# with methods prior_probability, dataset size, etc.
+#
+
 def prior_probability(label, datastats):
     """
     Inputs:
