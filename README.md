@@ -1,9 +1,5 @@
 # Ethical Moderation Lab
 
-### HackIllinois 2021
-
-## ethical-moderation-lab
-
 Ethical Moderation is a programming project that forces students to grapple with the ethics of content moderation. The project was built for students, by students, and it is designed to be open-source: we want to be part of a larger wave of revamped ethics education in computer science.
 
 This repository contains the coding portion of the project. Students will use Python and Jupyter Notebook to construct a working content moderation algorithm and contemplate its efficacy.
