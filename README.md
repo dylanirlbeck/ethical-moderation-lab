@@ -12,13 +12,19 @@ First, clone the repo (or download and unzip):
 git clone https://github.com/dylanirlbeck/ethical-moderation-lab.git
 ```
 
+Navigate to the project directory:
+
+```
+cd ethical-moderation-lab
+```
+
 Install required packages:
 
 ```
 pip install -r ./requirements.txt
 ```
 
-Inside the project directory, build the notebook:
+Build the notebook:
 
 ```
 python3 ./build.py
