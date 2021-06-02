@@ -6,7 +6,7 @@ This repository contains the coding portion of the project. Students will use Py
 
 ## Setup
 
-First, clone the repo:
+First, clone the repo (or download and unzip):
 
 ```
 git clone https://github.com/dylanirlbeck/ethical-moderation-lab.git
@@ -18,7 +18,7 @@ Install required packages:
 pip install -r ./requirements.txt
 ```
 
-Build the notebook:
+Inside the project directory, build the notebook:
 
 ```
 python3 ./build.py
