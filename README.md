@@ -24,18 +24,12 @@ Install required packages:
 pip install -r ./requirements.txt
 ```
 
-Build the notebook:
-
-```
-python3 ./build.py
-```
-
 ## Running
 
-This project relies on Jupyter Notebook for running the code. Make sure you have it downloaded, and then in the correct directory run:
+This project relies on [Jupyter Notebook](https://jupyter.org/install) for running the code. After ensuring you have it downloaded, run
 
 ```
 jupyter notebook
 ```
 
-and open the `code.ipynb` file. The rest of the lab is completed inside the notebook.
+and open the `code.ipynb` file. The rest of the lab is completed inside the notebook. (If you haven't used Jupyter Notebook before, you can read a [quick-start tutorial](https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/execute.html) or its [official documentation](https://jupyter-notebook.readthedocs.io/en/stable/#).)
